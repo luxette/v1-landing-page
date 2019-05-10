@@ -5,7 +5,7 @@ const Step = ({ icon, title, body, small }) => (
   <div className="step">
     <div className="step-image-container">
       <img
-        className={`${small ? "small-icon" : "step-icon"}`}
+        className={`${small ? 'small-icon' : 'step-icon'}`}
         src={icon}
         alt="step"
       />

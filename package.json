@@ -12,10 +12,20 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "yarn lint -- --fix"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint",
+      "git add"
+    ]
   },
   "browserslist": [
     ">0.2%",
@@ -24,6 +34,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-divisio": "^0.2.0",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
     "react-app-rewire-aliases": "^0.2.0",
     "react-app-rewired": "^2.1.3"
   }
