@@ -1,28 +1,40 @@
 import React from 'react'
+import { createGlobalStyle } from 'styled-components'
 
-import {
-  Header,
-  Landing,
-  Destinations,
-  HowWorks,
-  MainImage,
-  Testimonials
-} from '@/style-guide'
+import Landing from '@/screens/Landing'
 
-import './App.css'
+const StyledGlobal = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
 
-import luxette from '@/assets/images/luxette.png'
+  html,
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+`
 
 const App = () => (
-  <div>
-    <img src={luxette} alt="check" />
-    <Header />
-    <MainImage />
+  <>
+    <StyledGlobal />
     <Landing />
-    <HowWorks />
-    <Destinations />
-    <Testimonials />
-  </div>
+  </>
+  // <div>
+  //   <img src={luxette} alt="check" />
+  //   <Header />
+  //   <MainImage />
+  //   <Landing />
+  //   <HowWorks />
+  //   <Destinations />
+  //   <Testimonials />
+  // </div>
 )
 
 export default App
