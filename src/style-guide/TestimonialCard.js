@@ -1,13 +1,31 @@
 import React from 'react'
+import styled from 'styled-components'
 import { string, node } from 'prop-types'
 
+const StyledContainer = styled.div`
+  justify-content: space-around;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-family: "Montserrat";
+  text-align: center;
+`
+
+const StyledClient = styled.p`
+  font-weight: bold;
+  padding-left: 20px;
+`
+
 const TestimonialCard = ({ client, children }) => (
-  <>
+  <StyledContainer>
     <p>{children}</p>
-    <p className="client">
+    <StyledClient>
       - {client}
-    </p>
-  </>
+    </StyledClient>
+  </StyledContainer>
 )
 
 TestimonialCard.propTypes = {

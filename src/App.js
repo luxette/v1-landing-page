@@ -6,10 +6,10 @@ import Landing from '@/screens/Landing'
 const StyledGlobal = createGlobalStyle`
   * {
     box-sizing: border-box;
+    flex-wrap: wrap;
   }
 
-  html,
-  body {
+  html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
@@ -18,6 +18,7 @@ const StyledGlobal = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 24px;
   }
 `
 
@@ -26,15 +27,6 @@ const App = () => (
     <StyledGlobal />
     <Landing />
   </>
-  // <div>
-  //   <img src={luxette} alt="check" />
-  //   <Header />
-  //   <MainImage />
-  //   <Landing />
-  //   <HowWorks />
-  //   <Destinations />
-  //   <Testimonials />
-  // </div>
 )
 
 export default App
