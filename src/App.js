@@ -15,7 +15,7 @@ import luxette from '@/assets/images/luxette.png'
 
 const App = () => (
   <div>
-    <img src={luxette} alt="check" />
+    <img className="luxette-img" src={luxette} alt="check" />
     <Header />
     <MainImage />
     <Landing />

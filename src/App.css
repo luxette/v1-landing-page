@@ -14,6 +14,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.luxette-img {
+  display: none;
+}
+
 .logo {
   width: 163px;
   height: 61.1249999236px;
@@ -217,4 +221,91 @@ p {
 .testimonials {
   background: #f1e3d0;
   padding-bottom: 30px;
+}
+
+@media (min-width: 780px) {
+
+  .main-container {
+    display: none;
+  }
+
+  .title {
+    font-size: 3em;
+    background-image: url('./assets/images/car.jpg');
+    background-size: cover;
+    height: 75vh;
+    color: #FFFCFF;
+    padding: 0;
+    justify-content: flex-end;
+  }
+
+  .main-cta {
+    margin: 5rem auto;
+    position: relative;
+  }
+
+  .how-works-title {
+    font-size: 3em;
+    padding: 50px 0;
+  }
+
+  .about p {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .step {
+    width: 40%;
+    margin:20px;
+  }
+
+  .how-works-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .destination-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0;
+  }
+
+  .destinations-title {
+    font-size: 2.2em;
+  }
+
+  .destination {
+    width: 30%;
+  }
+
+  .destination-name,
+  .step-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  .destination img {
+    border-radius: 10px;
+  }
+
+  .testimonial-wrap {
+    display: flex;
+  }
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .testimonials p {
+    width: 80%;
+    text-align: center;
+  }
+
 }

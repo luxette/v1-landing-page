@@ -17,16 +17,18 @@ const HowWorks = () => {
     <div className="how-works">
       <About />
       <div className="how-works-title">How does it work?</div>
-      <Step
-        className="first-step"
-        icon={phone}
-        title="Destination consultation"
-        body={callBody}
-        small
-      />
-      <Step icon={cal} title="Save your spot" body={sportBody} />
-      <Step icon={polish} title="Make it yours" body={makeBody} />
-      <Step icon={pack} small title="Pack and party" body={packBody} />
+      <div className="how-works-wrap">
+        <Step
+          className="first-step"
+          icon={phone}
+          title="Destination consultation"
+          body={callBody}
+          small
+        />
+        <Step icon={cal} title="Save your spot" body={sportBody} />
+        <Step icon={polish} title="Make it yours" body={makeBody} />
+        <Step icon={pack} small title="Pack and party" body={packBody} />
+      </div>
     </div>
   )
 }
