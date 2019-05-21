@@ -19,9 +19,10 @@ const StyledButton = styled.div`
 const StyledTitle = styled.span`
   display: block;
   font-family: "Montserrat";
-  font-size: 1em;
+  font-size: 1.3em;
+  text-transform: uppercase;
   font-weight: 600;
-  margin: 20px 0;
+  margin: 60px 0 40px 0;
 `
 
 const defaultInputStyle = Object.freeze({ marginBottom: 14 })

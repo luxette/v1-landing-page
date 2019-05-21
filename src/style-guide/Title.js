@@ -9,7 +9,7 @@ const StyledTitle = styled.div`
   text-align: center;
   color: #d7a6b2;
   font-weight: bold;
-  margin: 20px;
+  margin: 50px 20px 30px 20px;
   line-height: normal;
 `
 
