@@ -12,6 +12,10 @@ const StyledContainer = styled.div`
   width: 80%;
   font-family: "Montserrat";
   text-align: center;
+  @media (min-width: 760px) {
+    width: 40%;
+    margin: 0 auto;
+  }
 `
 
 const StyledClient = styled.p`

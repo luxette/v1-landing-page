@@ -7,6 +7,9 @@ const StyledHeader = styled.header`
   width: 100%;
   padding: 20px 40px;
   font-family: "Hammersmith One", sans-serif;
+  @media (min-width: 768px) {
+    text-align: center;
+  }
 `
 
 const StyledImage = styled.img`

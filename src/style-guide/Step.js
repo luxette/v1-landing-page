@@ -12,6 +12,9 @@ const StyledContainer = styled.div`
   width: 80%;
   font-family: "Montserrat";
   text-align: center;
+  @media (min-width: 768px) {
+    width: 40%;
+  }
 `
 
 const StyledIcon = styled.img`
@@ -23,6 +26,8 @@ const StyledTitle = styled.div`
   font-family: "Montserrat", sans-serif;
   margin: 20px 0px;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 `
 
 const StyledBody = styled.div`
