@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledContainer = styled.div`
   background-color: #e7d7d2;
   text-align: center;
-  color: #bb7a8c;
+  // color: #bb7a8c;
   font-family: "Montserrat";
 
   p {
@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
 
 const StyledTitle = styled.p`
   text-transform: uppercase;
-  font-family: "Hammersmith One", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.4em;
 `
 

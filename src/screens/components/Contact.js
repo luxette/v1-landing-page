@@ -10,9 +10,9 @@ const StyledContainer = styled.div`
   font-size: 1.4em;
   margin: 60px 0;
 
-  // a {
-  //   color: black;
-  // }
+  a {
+    color: black;
+  }
 `
 
 const StyledParagraph = styled.div`
@@ -26,13 +26,12 @@ const StyledParagraph = styled.div`
 const Contact = () => (
   <StyledContainer>
     <StyledParagraph>
-      <span>CUSTOM DESTINATIONS AVAILABLE UPON REQUEST.</span>
+      <span>
+        CUSTOM DESTINATIONS AVAILABLE UPON REQUEST.
+        CONTACT US {' '}<a href='mailto:concierge@luxette.co'>HERE</a>{' '}
+        TO GET STARTED.
+      </span>
     </StyledParagraph>
-    <p>
-      CONTACT US
-      {' '}<a href='mailto:concierge@luxette.co'>HERE</a>{' '}
-      TO GET STARTED
-    </p>
   </StyledContainer>
 )
 

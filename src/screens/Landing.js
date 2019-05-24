@@ -20,7 +20,7 @@ const StyledGradientContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to top, #f1e3d0, #ffffff 93%);
+  // background: linear-gradient(to top, #f1e3d0, #ffffff 93%);
 `
 const Landing = () => (
   <StyledLanding>
