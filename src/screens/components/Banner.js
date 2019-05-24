@@ -30,11 +30,13 @@ const StyledBannerText = styled.span`
 `
 
 const StyledBannerFooter = styled.span`
-  font-size: 0.8em;
+  font-size: 1.4em;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
+  font-family: "Hammersmith One", sans-serif;
   margin: 30px 0 60px 0;
+  color: #e7d7d2;
   text-align: center;
 `
 
@@ -49,7 +51,7 @@ const MainImage = () => (
       </StyledBannerText>
     </StyledBanner>
     <StyledBannerFooter>
-      All-inclusive - bespoke itineraries - custom decor & swag - 24/7 concierge
+      BESPOKE. LUXURY. STRESS-FREE. TRAVEL. MEMORIES.
     </StyledBannerFooter>
   </>
 )
