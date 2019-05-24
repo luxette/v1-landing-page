@@ -1,28 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { Input } from '@/style-guide'
+import { Input, Button, Title } from '@/style-guide'
 
 const StyledContainer = styled.div`
   width: 60%;
   text-align: center;
-`
-
-const StyledButton = styled.div`
-  font-size: 1.2em;
-  font-weight: 700;
-  cursor: pointer;
-  margin: 20px 0;
-  text-transform: uppercase;
-`
-
-const StyledTitle = styled.span`
-  display: block;
-  font-family: "Montserrat";
-  font-size: 1.3em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 60px 0 40px 0;
 `
 
 const defaultInputStyle = Object.freeze({ marginBottom: 14 })
@@ -40,9 +23,11 @@ const SubmitForm = () => {
 
   return (
     <StyledContainer>
-      <StyledTitle>
+      <Title
+        style={{ marginTop: 30, marginBottom: 20 }}
+      >
         Submit the form below to get started
-      </StyledTitle>
+      </Title>
       <Input
         placeholder='First Name*'
         value={firstName}
@@ -99,9 +84,10 @@ const SubmitForm = () => {
         onChange={e => setOther(e.target.value)}
         style={defaultInputStyle}
       />
-      <StyledButton>
-        Submit
-      </StyledButton>
+      <Button
+        label='SUBMIT'
+        onClick={() => console.log('Submit form!')}
+      />
     </StyledContainer>
   )
 }

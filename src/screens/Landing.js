@@ -16,24 +16,16 @@ const StyledLanding = styled.div`
   align-items: center;
 `
 
-const StyledGradientContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  // background: linear-gradient(to top, #f1e3d0, #ffffff 93%);
-`
 const Landing = () => (
   <StyledLanding>
     <Header />
     <Banner />
     <Introduction />
     <Contact />
-    <StyledGradientContent>
-      <HowWorks />
-      <SubmitForm />
-      <Testimonials />
-      <Footer />
-    </StyledGradientContent>
+    <HowWorks />
+    <Testimonials />
+    <SubmitForm />
+    <Footer />
   </StyledLanding>
 )
 
