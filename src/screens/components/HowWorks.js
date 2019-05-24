@@ -23,7 +23,7 @@ const StyledContainer = styled.div`
 const HowWorks = () => (
   <>
     <Title>
-      How does it work?
+      How It Works
     </Title>
     <StyledContainer>
       <Step

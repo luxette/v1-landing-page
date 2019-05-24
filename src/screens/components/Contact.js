@@ -3,14 +3,16 @@ import styled from 'styled-components'
 
 const StyledContainer = styled.div`
   width: 80%;
-  font-family: "Montserrat";
+  font-family: "Hammersmith One";
+  color: #bb7a8c;
   text-transform: uppercase;
   text-align: center;
+  font-size: 1.4em;
   margin: 60px 0;
 
-  a {
-    color: black;
-  }
+  // a {
+  //   color: black;
+  // }
 `
 
 const StyledParagraph = styled.div`
@@ -24,18 +26,12 @@ const StyledParagraph = styled.div`
 const Contact = () => (
   <StyledContainer>
     <StyledParagraph>
-      <span>NOT INTERESTED IN A BACHELORETTE IN NAPA VALLEY, NEW ORLEANS, OR NEW YORK?</span>
-      <span>NO PROBLEM.</span>
+      <span>CUSTOM DESTINATIONS AVAILABLE UPON REQUEST.</span>
     </StyledParagraph>
     <p>
-      WE OFFER CUSTOM ITINERARIES IF YOU HAVE ANOTHER CITY IN MIND OR WE CAN
-      HELP YOU RESEARCH THE PERFECT GETAWAY SPOT.
-    </p>
-    <p>
-      SEND US AN EMAIL
+      CONTACT US
       {' '}<a href='mailto:concierge@luxette.co'>HERE</a>{' '}
-      FOR MORE INFORMATION ON
-      CUSTOM PACKAGES & PRICING.
+      TO GET STARTED
     </p>
   </StyledContainer>
 )
