@@ -1,6 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import { string, bool, node } from 'prop-types'
+import styled from 'styled-components'
+
+import { accent2 } from './colors'
 
 const StyledContainer = styled.div`
   justify-content: space-around;
@@ -28,6 +30,7 @@ const StyledTitle = styled.div`
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
+  color: ${accent2};
 `
 
 const StyledBody = styled.div`
