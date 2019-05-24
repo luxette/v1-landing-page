@@ -32,12 +32,12 @@ const HowWorks = () => (
         small
       >
         Once we have received your inquiry and we have exchanged greetings and hellos,
-        we will send you a more in-depth questionnaire to learn more about the bride
-        and how she likes to travel. From there we will schedule a consultation call
-        to get to know each other and run through some initial ideas and our available
-        packages. Don’t forget: if you like what you see but don’t see your
-        destination offered, we are happy to customize something for you. We love
-        researching new places!
+        we will send you an in-depth questionnaire to learn more about the vision
+        for the trip and to collect basic information. From there we will schedule a
+        consultation call to get to know each other and run through some initial ideas
+        and our available packages. Don’t forget: if you like what you see but don’t
+        see your destination offered, we are happy to customize something for you.
+        We love researching new places!
       </Step>
       <Step
         icon={cal}
