@@ -68,8 +68,7 @@ const HowWorks = () => (
         Now comes the fun part! You get to sit back and relax while we handle the
         rest. We will even include a customized look book to make packing easy so that
         everything feels seamless from the start. Get ready to have a perfect weekend
-        with your best friends. The Luxette Concierge team will be accessible the
-        whole time to make sure of it!
+        with your best friends.
       </Step>
     </StyledContainer>
   </>
