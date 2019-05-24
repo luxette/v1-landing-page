@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import phone from '@/assets/images/phone.png'
+import phone from '@/assets/images/phone.svg'
 import cal from '@/assets/images/calendar.svg'
-import polish from '@/assets/images/polish.png'
-import pack from '@/assets/images/pack.png'
+import polish from '@/assets/images/polish.svg'
+import pack from '@/assets/images/pack.svg'
 
 import { Step, Title } from '@/style-guide'
 
