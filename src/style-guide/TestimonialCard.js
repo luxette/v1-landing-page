@@ -20,6 +20,7 @@ const StyledContainer = styled.div`
 
 const StyledClient = styled.p`
   font-weight: bold;
+  color: #112d30;
   padding-left: 20px;
 `
 

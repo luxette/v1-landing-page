@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import phone from '@/assets/images/phone.png'
+import phone from '@/assets/images/phone.svg'
 import cal from '@/assets/images/calendar.svg'
-import polish from '@/assets/images/polish.png'
-import pack from '@/assets/images/pack.png'
+import polish from '@/assets/images/polish.svg'
+import pack from '@/assets/images/pack.svg'
 
 import { Step, Title } from '@/style-guide'
 
@@ -23,7 +23,7 @@ const StyledContainer = styled.div`
 const HowWorks = () => (
   <>
     <Title>
-      How does it work?
+      How It Works
     </Title>
     <StyledContainer>
       <Step
@@ -32,12 +32,12 @@ const HowWorks = () => (
         small
       >
         Once we have received your inquiry and we have exchanged greetings and hellos,
-        we will send you a more in-depth questionnaire to learn more about the bride
-        and how she likes to travel. From there we will schedule a consultation call
-        to get to know each other and run through some initial ideas and our available
-        packages. Don’t forget: if you like what you see but don’t see your
-        destination offered, we are happy to customize something for you. We love
-        researching new places!
+        we will send you an in-depth questionnaire to learn more about the vision
+        for the trip and to collect basic information. From there we will schedule a
+        consultation call to get to know each other and run through some initial ideas
+        and our available packages. Don’t forget: if you like what you see but don’t
+        see your destination offered, we are happy to customize something for you.
+        We love researching new places!
       </Step>
       <Step
         icon={cal}
@@ -68,8 +68,7 @@ const HowWorks = () => (
         Now comes the fun part! You get to sit back and relax while we handle the
         rest. We will even include a customized look book to make packing easy so that
         everything feels seamless from the start. Get ready to have a perfect weekend
-        with your best friends. The Luxette Concierge team will be accessible the
-        whole time to make sure of it!
+        with your best friends.
       </Step>
     </StyledContainer>
   </>

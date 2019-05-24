@@ -25,16 +25,19 @@ const StyledBannerText = styled.span`
   left: 30px;
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 1.6em;
+  font-size: 2.7em;
+  color: #e7d7d2;
   letter-spacing: 4px;
 `
 
 const StyledBannerFooter = styled.span`
-  font-size: 0.8em;
+  font-size: 1.5em;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
+  font-family: "Hammersmith One", sans-serif;
   margin: 30px 0 60px 0;
+  color: #e7d7d2;
   text-align: center;
 `
 
@@ -43,13 +46,13 @@ const MainImage = () => (
     <StyledBanner>
       <img src={banner} alt='Luxette banner with a women having a drink' />
       <StyledBannerText>
-        <p>The Luxury</p>
-        <p>Bachelorette</p>
-        <p>Experts</p>
+        <p>
+        Luxury Bachelorette Experts
+        </p>
       </StyledBannerText>
     </StyledBanner>
     <StyledBannerFooter>
-      All-inclusive - bespoke itineraries - custom decor & swag - 24/7 concierge
+      BESPOKE. LUXURY. STRESS-FREE. TRAVEL. MEMORIES.
     </StyledBannerFooter>
   </>
 )

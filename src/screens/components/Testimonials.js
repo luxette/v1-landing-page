@@ -17,11 +17,11 @@ const StyledContainer = styled.div`
 const Testimonials = () => (
   <>
     <Title>
-      What Our Clients Are Saying
+      WHAT OUR CLIENTS ARE SAYING
     </Title>
     <StyledContainer>
       <TestimonialCard client='Tiffany M., MOH'>
-        I had a wonderful experience planning my best friend's bachelorette party with
+        "I had a wonderful experience planning my best friend's bachelorette party with
         Lauren! From beginning to end, Lauren was so meticulous about making sure that
         my vision for the event came to life, and that everything went off without a
         hitch. It was clear Lauren knows the best of the best when it comes to dining
@@ -30,7 +30,7 @@ const Testimonials = () => (
         were on the ground. Our entire party was blown away! Having her by my side was
         a HUGE help and I couldn't have done it without her (especially while working
         2 jobs!). I'd highly recommend Lauren and Luxette for any travel or event
-        planning needs. 5 stars!!
+        planning needs. 5 stars!!"
       </TestimonialCard>
       <TestimonialCard client='Aly T., Bride'>
         "I couldn't have imagined a better bachelorette trip than what Lauren (of

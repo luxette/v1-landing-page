@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
 `
 
 const StyledImage = styled.img`
-  width: 200px;
+  width: 475px;
   object-fit: contain;
 `
 

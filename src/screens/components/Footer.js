@@ -23,7 +23,7 @@ const StyledIconsContainer = styled.div`
 const Footer = () => (
   <StyledContainer>
     <Title style={{ marginBottom: 60 }}>
-      Unforgettable moments, planned by us, tailored to you.
+      FINDING LOVE CAN BE HARD, BUT PLANNING YOUR BACHELORETTE IS EASY WITH US.
     </Title>
     <StyledIconsContainer>
       <LinkIcon
