@@ -33,6 +33,10 @@ const SubmitForm = () => {
   const [weddingRole, setWeddingRole] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [destination, setDestination] = useState('')
+  const [travelDates, setTravelDates] = useState('')
+  const [numberGuests, setNumberGuests] = useState('')
+  const [other, setOther] = useState('')
 
   return (
     <StyledContainer>
@@ -40,36 +44,60 @@ const SubmitForm = () => {
         Submit the form below to get started
       </StyledTitle>
       <Input
-        placeholder='First name'
+        placeholder='First Name*'
         value={firstName}
         onChange={e => setFirstName(e.target.value)}
         style={defaultInputStyle}
       />
       <Input
-        placeholder='Last name'
+        placeholder='Last Name*'
         value={lastName}
         onChange={e => setLastName(e.target.value)}
         style={defaultInputStyle}
       />
       <Input
-        placeholder='What is your role in the wedding?'
+        placeholder="What's your role in the wedding?*"
         value={weddingRole}
         onChange={e => setWeddingRole(e.target.value)}
         style={defaultInputStyle}
       />
       <Input
-        placeholder='Email'
+        placeholder='Email*'
         value={email}
         onChange={e => setEmail(e.target.value)}
         style={defaultInputStyle}
         type='email'
       />
       <Input
-        placeholder='Phone'
+        placeholder='Phone*'
         value={phone}
         onChange={e => setPhone(e.target.value)}
         style={defaultInputStyle}
         type='tel'
+      />
+      <Input
+        placeholder='Desired Destination*'
+        value={destination}
+        onChange={e => setDestination(e.target.value)}
+        style={defaultInputStyle}
+      />
+      <Input
+        placeholder='Dates of Travel (Exact or General)*'
+        value={travelDates}
+        onChange={e => setTravelDates(e.target.value)}
+        style={defaultInputStyle}
+      />
+      <Input
+        placeholder='Number of Guests*'
+        value={numberGuests}
+        onChange={e => setNumberGuests(e.target.value)}
+        style={defaultInputStyle}
+      />
+      <Input
+        placeholder='Other Details We Should Know!'
+        value={other}
+        onChange={e => setOther(e.target.value)}
+        style={defaultInputStyle}
       />
       <StyledButton>
         Submit

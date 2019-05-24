@@ -23,7 +23,7 @@ const StyledIconsContainer = styled.div`
 const Footer = () => (
   <StyledContainer>
     <Title style={{ marginBottom: 60 }}>
-      Finding love can be hard, but planning your bachelorette is easy with us.
+      FINDING LOVE CAN BE HARD, BUT PLANNING YOUR BACHELORETTE IS EASY WITH US.
     </Title>
     <StyledIconsContainer>
       <LinkIcon

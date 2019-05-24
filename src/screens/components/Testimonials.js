@@ -30,7 +30,7 @@ const Testimonials = () => (
         were on the ground. Our entire party was blown away! Having her by my side was
         a HUGE help and I couldn't have done it without her (especially while working
         2 jobs!). I'd highly recommend Lauren and Luxette for any travel or event
-        planning needs. 5 stars!!""
+        planning needs. 5 stars!!"
       </TestimonialCard>
       <TestimonialCard client='Aly T., Bride'>
         "I couldn't have imagined a better bachelorette trip than what Lauren (of
