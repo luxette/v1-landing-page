@@ -6,6 +6,7 @@ import { Input, Button, Title } from '@/style-guide'
 const StyledContainer = styled.div`
   width: 60%;
   text-align: center;
+  padding-top: 30px;
 `
 
 const defaultInputStyle = Object.freeze({ marginBottom: 14 })
@@ -23,16 +24,14 @@ const SubmitForm = () => {
 
   return (
     <StyledContainer>
-      <Title
-        style={{ marginTop: 30, marginBottom: 20 }}
-      >
+      <Title>
         Submit the form below to get started
       </Title>
       <Input
         placeholder='First Name*'
         value={firstName}
         onChange={e => setFirstName(e.target.value)}
-        style={defaultInputStyle}
+        style={{ ...defaultInputStyle, marginTop: 20 }}
       />
       <Input
         placeholder='Last Name*'

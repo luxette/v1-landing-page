@@ -9,12 +9,12 @@ const StyledContainer = styled.div`
   background-color: ${accent2};
   display: flex;
   justify-content: center;
-  align-items: center;
   font-family: "Hammersmith One";
 
   p {
     font-weight: bold;
     color: ${secondary1};
+    margin-top: 25px;
   }
 
   a {

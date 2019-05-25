@@ -47,13 +47,20 @@ const StyledBannerText = styled.span`
 const StyledBannerFooter = styled.span`
   font-size: 1.5em;
   text-transform: uppercase;
-  font-weight: 800;
   letter-spacing: 2px;
   font-family: "Hammersmith One", sans-serif;
   margin: 30px 0 60px 0;
   color: ${secondary1};
   text-align: center;
 `
+
+const goToBottomPage = () => {
+  window.scroll({
+    top: 9999,
+    left: 0,
+    behavior: 'smooth'
+  })
+}
 
 const Banner = () => (
   <>
@@ -63,7 +70,7 @@ const Banner = () => (
       </StyledBannerText>
       <Button
         label='START PLANNING'
-        onClick={() => console.log("Let's start planning!")}
+        onClick={goToBottomPage}
         style={{ marginTop: 40 }}
       />
     </StyledBanner>

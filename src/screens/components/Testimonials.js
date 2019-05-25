@@ -6,15 +6,17 @@ import { secondary1, accent2 } from '@/style-guide/colors'
 
 const StyledContainer = styled.div`
   background-color: ${secondary1};
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px 80px;
 `
 
 const StyledTestimonials = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 
   @media (min-width: 760px) {
     flex-direction: row;
@@ -24,7 +26,7 @@ const StyledTestimonials = styled.div`
 `
 
 const StyledFooter = styled.div`
-  height: 100px;
+  height: 110px;
   width: 100%;
   background-color: ${accent2};
   display: flex;
