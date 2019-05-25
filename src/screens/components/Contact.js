@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { accent2, secondary1 } from '@/style-guide/colors'
 
 const StyledContainer = styled.div`
-  height: 100px;
+  height: 90px;
   width: 100%;
   background-color: ${accent2};
   display: flex;
@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
   p {
     font-weight: bold;
     color: ${secondary1};
-    margin-top: 25px;
+    margin-top: 20px;
   }
 
   a {
