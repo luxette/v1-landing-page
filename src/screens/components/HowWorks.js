@@ -12,6 +12,7 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (min-width: 768px) {
     flex-wrap: wrap;
     flex-direction: row;
@@ -22,8 +23,10 @@ const StyledContainer = styled.div`
 
 const HowWorks = () => (
   <>
-    <Title>
-      How It Works
+    <Title
+      style={{ marginTop: 30 }}
+    >
+      HOW IT WORKS
     </Title>
     <StyledContainer>
       <Step

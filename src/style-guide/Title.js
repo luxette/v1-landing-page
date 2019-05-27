@@ -2,13 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { node, object } from 'prop-types'
 
-const StyledTitle = styled.div`
-  font-family: "Hammersmith One", sans-serif;
-  font-size: 1.8em;
+const StyledTitle = styled.span`
+  font-family: "Playfair Display", sans-serif;
+  font-size: 26px;
   text-align: center;
+  text-transform: uppercase;
   color: #112d30;
-  font-weight: bold;
-  margin: 50px 20px 30px 20px;
   line-height: normal;
 `
 

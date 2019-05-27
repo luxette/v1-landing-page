@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Title, LinkIcon } from '@/style-guide'
+import { LinkIcon } from '@/style-guide'
+import { accent2 } from '@/style-guide/colors'
 
 import theKnotIcon from '@/assets/images/the-knot-icon.png'
 import instagramIcon from '@/assets/images/instagram-icon.png'
@@ -10,21 +11,29 @@ import pinterestIcon from '@/assets/images/pinterest-icon.png'
 import emailIcon from '@/assets/images/mail-icon.png'
 
 const StyledContainer = styled.div`
-  padding: 20px;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const StyledTitle = styled.span`
+  font-family: "Hammersmith One";
+  color: ${accent2};
+  font-weight: bold;
 `
 
 const StyledIconsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px 0;
 `
 
 const Footer = () => (
   <StyledContainer>
-    <Title style={{ marginBottom: 60 }}>
-      FINDING LOVE CAN BE HARD, BUT PLANNING YOUR BACHELORETTE IS EASY WITH US.
-    </Title>
+    <StyledTitle>
+      CHECK US OUT
+    </StyledTitle>
     <StyledIconsContainer>
       <LinkIcon
         link='https://www.theknot.com/marketplace/redirect-2024966?utm_source=vendor_website&utm_medium=banner&utm_term=0de677f8-07e1-449d-bd22-03b2a9781c34&utm_campaign=vendor_badge_assets'

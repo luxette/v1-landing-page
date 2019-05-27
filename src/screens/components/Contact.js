@@ -1,37 +1,41 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { accent2, secondary1 } from '@/style-guide/colors'
+
 const StyledContainer = styled.div`
-  width: 80%;
+  height: 110px;
+  width: 100%;
+  background-color: ${accent2};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Hammersmith One";
-  color: #bb7a8c;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.4em;
-  margin: 60px 0;
+
+  p {
+    font-weight: bold;
+    color: ${secondary1};
+  }
 
   a {
-    color: black;
-  }
-`
+    font-weight: bold;
+    color: ${secondary1};
+    text-decoration: none;
 
-const StyledParagraph = styled.div`
-  margin: 16px 0;
-
-  span {
-    display: block;
+    a:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   }
 `
 
 const Contact = () => (
   <StyledContainer>
-    <StyledParagraph>
-      <span>
-        CUSTOM DESTINATIONS AVAILABLE UPON REQUEST.
-        CONTACT US {' '}<a href='mailto:concierge@luxette.co'>HERE</a>{' '}
-        TO GET STARTED.
-      </span>
-    </StyledParagraph>
+    <p>
+      CUSTOM DESTINATIONS ARE AVAILABLE UPON REQUEST.
+      CONTACT US {' <'}<a href='mailto:concierge@luxette.co'>HERE</a>{'> '}
+      TO GET STARTED.
+    </p>
   </StyledContainer>
 )
 
