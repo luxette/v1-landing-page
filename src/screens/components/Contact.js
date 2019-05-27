@@ -4,17 +4,17 @@ import styled from 'styled-components'
 import { accent2, secondary1 } from '@/style-guide/colors'
 
 const StyledContainer = styled.div`
-  height: 90px;
+  height: 110px;
   width: 100%;
   background-color: ${accent2};
   display: flex;
+  align-items: center;
   justify-content: center;
   font-family: "Hammersmith One";
 
   p {
     font-weight: bold;
     color: ${secondary1};
-    margin-top: 20px;
   }
 
   a {

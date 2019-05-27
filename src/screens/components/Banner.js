@@ -49,7 +49,9 @@ const StyledBannerFooter = styled.span`
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: "Hammersmith One", sans-serif;
-  margin: 30px 0 60px 0;
+  margin: 60px 0 60px 0;
+  font-weight: 600;
+  opacity: 1;
   color: ${secondary1};
   text-align: center;
 `
