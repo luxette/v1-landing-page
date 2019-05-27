@@ -21,7 +21,12 @@ const StyledContainer = styled.div`
 `
 
 const StyledContent = styled.div`
-  width: 665px;
+  // width: 665px;
+  width: 100%
+
+  @media (min-width: 768px) {
+    width: 665px;
+  }
 `
 
 const Introduction = () => (
