@@ -10,6 +10,11 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px 80px;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    padding: 30px 10px;
+  }
 `
 
 const StyledTestimonials = styled.div`
@@ -20,7 +25,7 @@ const StyledTestimonials = styled.div`
 
   @media (min-width: 760px) {
     flex-direction: row;
-    justity-content: space-between;
+    justify-content: space-between;
     align-content: center;
   }
 `
@@ -37,6 +42,7 @@ const StyledFooter = styled.div`
   p {
     font-weight: bold;
     color: ${secondary1};
+    text-align: center;
   }
 `
 

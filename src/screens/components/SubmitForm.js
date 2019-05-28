@@ -7,6 +7,11 @@ const StyledContainer = styled.div`
   width: 60%;
   text-align: center;
   padding-top: 30px;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    padding: 30px 20px;
+  }
 `
 
 const defaultInputStyle = Object.freeze({ marginBottom: 14 })
