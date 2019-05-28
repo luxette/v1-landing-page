@@ -18,6 +18,7 @@ const StyledHeader = styled.header`
 
 const StyledImage = styled.img`
   object-fit: contain;
+  height: 185px;
 
   @media (max-width: 992px) {
     height: 120px;
