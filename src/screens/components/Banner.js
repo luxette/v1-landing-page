@@ -10,7 +10,6 @@ const StyledBanner = styled.div`
   width: 80%;
   height: 800px;
   position: relative;
-  margin-top: -40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -39,9 +38,15 @@ const StyledBanner = styled.div`
 const StyledBannerText = styled.span`
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 2.7em;
+  font-size: 43px;
   color: ${secondary1};
   letter-spacing: 4px;
+  text-align: center;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    font-size: 22px;
+  }
 `
 
 const StyledBannerFooter = styled.span`

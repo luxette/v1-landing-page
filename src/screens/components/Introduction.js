@@ -22,6 +22,11 @@ const StyledContainer = styled.div`
 
 const StyledContent = styled.div`
   width: 665px;
+  padding: 0 20px;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 `
 
 const Introduction = () => (

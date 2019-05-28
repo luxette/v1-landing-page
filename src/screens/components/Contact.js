@@ -15,6 +15,8 @@ const StyledContainer = styled.div`
   p {
     font-weight: bold;
     color: ${secondary1};
+    text-align: center;
+    padding: 0 20px;
   }
 
   a {
