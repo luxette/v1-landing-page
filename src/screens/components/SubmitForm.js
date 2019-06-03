@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import { Formik } from 'formik'
+import * as yup from 'yup'
+import styled, { keyframes } from 'styled-components'
 
-import { Input, Button, Title } from '@/style-guide'
+import NumberFormat from 'react-number-format'
+
+import { Input, Button, Title, Loading } from '@/style-guide'
+
+import { saveContact } from '@/utils/api'
 
 const StyledContainer = styled.div`
   width: 60%;
@@ -14,85 +20,253 @@ const StyledContainer = styled.div`
   }
 `
 
-const defaultInputStyle = Object.freeze({ marginBottom: 14 })
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+`
+
+const StyledMessage = styled.div`
+  color: #fff;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  opacity: 1;
+  animation: ${fadeOut} 1s linear 2s;
+`
+
+const StyledSuccessMessage = styled(StyledMessage)`
+  background-color: #66d566;
+`
+
+const StyledErrorMessage = styled(StyledMessage)`
+  background-color: #fa7b7b;
+`
+
+const REQUIRED_MESSAGE = 'This field is required'
+const VALID_EMAIL_MESSAGE = 'Please type a valid email'
+const VALID_NUMBER_MESSAGE = 'Please type a valid number'
+const VALID_LIMIT_NUMBER_MESSAGE = 'The number must be greater or equal to zero'
+const MESSAGE_TIME = 3000
+
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  weddingRole: '',
+  email: '',
+  phone: '',
+  destination: '',
+  travelDates: '',
+  numberGuests: '',
+  other: '',
+}
+
+const validationSchema = yup.object().shape({
+  firstName: yup.string().required(REQUIRED_MESSAGE),
+  lastName: yup.string().required(REQUIRED_MESSAGE),
+  weddingRole: yup.string().required(REQUIRED_MESSAGE),
+  email: yup.string().email(VALID_EMAIL_MESSAGE).required(REQUIRED_MESSAGE),
+  phone: yup.string().min(10, VALID_NUMBER_MESSAGE).required(REQUIRED_MESSAGE),
+  destination: yup.string().required(REQUIRED_MESSAGE),
+  travelDates: yup.string().required(REQUIRED_MESSAGE),
+  numberGuests: yup.number()
+    .min(0, VALID_LIMIT_NUMBER_MESSAGE)
+    .typeError(VALID_NUMBER_MESSAGE)
+    .required(REQUIRED_MESSAGE),
+  other: yup.string(),
+})
+
+const defaultInputStyle = Object.freeze({ marginBottom: 10 })
 
 const SubmitForm = () => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [weddingRole, setWeddingRole] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [destination, setDestination] = useState('')
-  const [travelDates, setTravelDates] = useState('')
-  const [numberGuests, setNumberGuests] = useState('')
-  const [other, setOther] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [successMessageVisible, setSuccessMessageVisible] = useState(false)
+  const [errorMessageVisible, setErrorMessageVisible] = useState(false)
+
+  const showSuccessMessage = () => {
+    setErrorMessageVisible(false)
+    setSuccessMessageVisible(true)
+
+    setTimeout(() => {
+      setSuccessMessageVisible(false)
+    }, MESSAGE_TIME)
+  }
+
+  const showErrorMessage = () => {
+    setSuccessMessageVisible(false)
+    setErrorMessageVisible(true)
+
+    setTimeout(() => {
+      setErrorMessageVisible(false)
+    }, MESSAGE_TIME)
+  }
+
+  /* eslint-disable react/prop-types */
+  const InputWithMask = ({
+    setFieldValue,
+    error,
+    placeholder,
+    type,
+    onChange,
+    value,
+    name,
+    style
+  }) => (
+    <Input
+      placeholder={placeholder}
+      type={type}
+      name={name}
+      error={error}
+      value={value}
+      onChange={onChange}
+      style={style}
+      setFieldValue={setFieldValue}
+    />
+  )
+  /* eslint-enable react/prop-types */
+
+  const sendFormValues = async (values, { resetForm }) => {
+    try {
+      const postValues = {
+        FIRSTNAME: values.firstName,
+        LASTNAME: values.lastName,
+        WEDDINGROL: values.weddingRole,
+        EMAIL: values.email,
+        PHONE: values.phone,
+        DESTINATIO: values.destination,
+        TRAVELDATE: values.travelDates,
+        NUMBERGUES: values.numberGuests,
+        OTHER: values.other
+      }
+
+      setLoading(true)
+      await saveContact(postValues)
+
+      resetForm()
+      showSuccessMessage()
+    } catch (err) {
+      showErrorMessage()
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
-    <StyledContainer>
-      <Title>
-        Submit the form below to get started
-      </Title>
-      <Input
-        placeholder='First Name*'
-        value={firstName}
-        onChange={e => setFirstName(e.target.value)}
-        style={{ ...defaultInputStyle, marginTop: 20 }}
-      />
-      <Input
-        placeholder='Last Name*'
-        value={lastName}
-        onChange={e => setLastName(e.target.value)}
-        style={defaultInputStyle}
-      />
-      <Input
-        placeholder="What's your role in the wedding?*"
-        value={weddingRole}
-        onChange={e => setWeddingRole(e.target.value)}
-        style={defaultInputStyle}
-      />
-      <Input
-        placeholder='Email*'
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        style={defaultInputStyle}
-        type='email'
-      />
-      <Input
-        placeholder='Phone*'
-        value={phone}
-        onChange={e => setPhone(e.target.value)}
-        style={defaultInputStyle}
-        type='tel'
-      />
-      <Input
-        placeholder='Desired Destination*'
-        value={destination}
-        onChange={e => setDestination(e.target.value)}
-        style={defaultInputStyle}
-      />
-      <Input
-        placeholder='Dates of Travel (Exact or General)*'
-        value={travelDates}
-        onChange={e => setTravelDates(e.target.value)}
-        style={defaultInputStyle}
-      />
-      <Input
-        placeholder='Number of Guests*'
-        value={numberGuests}
-        onChange={e => setNumberGuests(e.target.value)}
-        style={defaultInputStyle}
-      />
-      <Input
-        placeholder='Other Details We Should Know!'
-        value={other}
-        onChange={e => setOther(e.target.value)}
-        style={defaultInputStyle}
-      />
-      <Button
-        label='SUBMIT'
-        onClick={() => console.log('Submit form!')}
-      />
-    </StyledContainer>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={sendFormValues}
+    >
+      {({ values, errors, handleChange, setFieldValue, handleSubmit }) => (
+        <StyledContainer>
+          <Title>
+            Submit the form below to get started
+          </Title>
+          <Input
+            placeholder='First Name*'
+            value={values.firstName}
+            error={errors.firstName}
+            name='firstName'
+            onChange={handleChange}
+            style={{ ...defaultInputStyle, marginTop: 20 }}
+          />
+          <Input
+            placeholder='Last Name*'
+            value={values.lastName}
+            error={errors.lastName}
+            name='lastName'
+            onChange={handleChange}
+            style={defaultInputStyle}
+          />
+          <Input
+            placeholder="What's your role in the wedding?*"
+            value={values.weddingRole}
+            error={errors.weddingRole}
+            name='weddingRole'
+            onChange={handleChange}
+            style={defaultInputStyle}
+          />
+          <Input
+            placeholder='Email*'
+            value={values.email}
+            error={errors.email}
+            type='email'
+            name='email'
+            onChange={handleChange}
+            style={defaultInputStyle}
+          />
+
+          <NumberFormat
+            placeholder='Phone*'
+            value={values.phone}
+            error={errors.phone}
+            type='tel'
+            name='phone'
+            onValueChange={({ value }) => setFieldValue('phone', value)}
+            customInput={InputWithMask}
+            format="(###) ###-####"
+            mask="_"
+            style={defaultInputStyle}
+          />
+
+          <Input
+            placeholder='Desired Destination*'
+            value={values.destination}
+            error={errors.destination}
+            name='destination'
+            onChange={handleChange}
+            style={defaultInputStyle}
+          />
+          <Input
+            placeholder='Dates of Travel (Exact or General)*'
+            value={values.travelDates}
+            error={errors.travelDates}
+            name='travelDates'
+            onChange={handleChange}
+            style={defaultInputStyle}
+          />
+          <Input
+            placeholder='Number of Guests*'
+            value={values.numberGuests}
+            error={errors.numberGuests}
+            name='numberGuests'
+            onChange={handleChange}
+            style={defaultInputStyle}
+          />
+          <Input
+            placeholder='Other Details We Should Know!'
+            value={values.other}
+            error={errors.other}
+            name='other'
+            onChange={handleChange}
+            style={defaultInputStyle}
+          />
+          {loading ? <Loading /> : (
+            <Button
+              label='SUBMIT'
+              onClick={handleSubmit}
+            />
+          )}
+
+          {successMessageVisible && (
+            <StyledSuccessMessage>
+              Thanks for submitting! Check your email shortly for more information.
+            </StyledSuccessMessage>
+          )}
+
+          {errorMessageVisible && (
+            <StyledErrorMessage>
+              An error has occurred, please try again later :(
+            </StyledErrorMessage>
+          )}
+        </StyledContainer>
+      )}
+    </Formik>
   )
 }
 
