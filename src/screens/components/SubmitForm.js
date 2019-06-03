@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
-
 import styled, { keyframes } from 'styled-components'
 
-import { Input, Button, Title } from '@/style-guide'
+import NumberFormat from 'react-number-format'
+
+import { Input, Button, Title, Loading } from '@/style-guide'
 
 import { saveContact } from '@/utils/api'
 
@@ -70,7 +71,7 @@ const validationSchema = yup.object().shape({
   lastName: yup.string().required(REQUIRED_MESSAGE),
   weddingRole: yup.string().required(REQUIRED_MESSAGE),
   email: yup.string().email(VALID_EMAIL_MESSAGE).required(REQUIRED_MESSAGE),
-  phone: yup.string().required(REQUIRED_MESSAGE),
+  phone: yup.string().min(10, VALID_NUMBER_MESSAGE).required(REQUIRED_MESSAGE),
   destination: yup.string().required(REQUIRED_MESSAGE),
   travelDates: yup.string().required(REQUIRED_MESSAGE),
   numberGuests: yup.number()
@@ -83,6 +84,7 @@ const validationSchema = yup.object().shape({
 const defaultInputStyle = Object.freeze({ marginBottom: 10 })
 
 const SubmitForm = () => {
+  const [loading, setLoading] = useState(false)
   const [successMessageVisible, setSuccessMessageVisible] = useState(false)
   const [errorMessageVisible, setErrorMessageVisible] = useState(false)
 
@@ -104,6 +106,30 @@ const SubmitForm = () => {
     }, MESSAGE_TIME)
   }
 
+  /* eslint-disable react/prop-types */
+  const InputWithMask = ({
+    setFieldValue,
+    error,
+    placeholder,
+    type,
+    onChange,
+    value,
+    name,
+    style
+  }) => (
+    <Input
+      placeholder={placeholder}
+      type={type}
+      name={name}
+      error={error}
+      value={value}
+      onChange={onChange}
+      style={style}
+      setFieldValue={setFieldValue}
+    />
+  )
+  /* eslint-enable react/prop-types */
+
   const sendFormValues = async (values, { resetForm }) => {
     try {
       const postValues = {
@@ -118,12 +144,15 @@ const SubmitForm = () => {
         OTHER: values.other
       }
 
+      setLoading(true)
       await saveContact(postValues)
 
       resetForm()
       showSuccessMessage()
     } catch (err) {
       showErrorMessage()
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -133,7 +162,7 @@ const SubmitForm = () => {
       validationSchema={validationSchema}
       onSubmit={sendFormValues}
     >
-      {({ values, errors, handleChange, handleSubmit }) => (
+      {({ values, errors, handleChange, setFieldValue, handleSubmit }) => (
         <StyledContainer>
           <Title>
             Submit the form below to get started
@@ -171,15 +200,20 @@ const SubmitForm = () => {
             onChange={handleChange}
             style={defaultInputStyle}
           />
-          <Input
+
+          <NumberFormat
             placeholder='Phone*'
             value={values.phone}
             error={errors.phone}
             type='tel'
             name='phone'
-            onChange={handleChange}
+            onValueChange={({ value }) => setFieldValue('phone', value)}
+            customInput={InputWithMask}
+            format="(###) ###-####"
+            mask="_"
             style={defaultInputStyle}
           />
+
           <Input
             placeholder='Desired Destination*'
             value={values.destination}
@@ -212,10 +246,12 @@ const SubmitForm = () => {
             onChange={handleChange}
             style={defaultInputStyle}
           />
-          <Button
-            label='SUBMIT'
-            onClick={handleSubmit}
-          />
+          {loading ? <Loading /> : (
+            <Button
+              label='SUBMIT'
+              onClick={handleSubmit}
+            />
+          )}
 
           {successMessageVisible && (
             <StyledSuccessMessage>
