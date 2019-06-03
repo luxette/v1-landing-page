@@ -219,7 +219,7 @@ const SubmitForm = () => {
 
           {successMessageVisible && (
             <StyledSuccessMessage>
-              Your contact was successfully sent :)
+              Thanks for submitting! Check your email shortly for more information.
             </StyledSuccessMessage>
           )}
 
