@@ -23,6 +23,13 @@ const StyledTitle = styled.span`
   font-weight: bold;
 `
 
+const StyledCopyright = styled.span`
+  margin-top: 20px;
+  font-family: "Hammersmith One";
+  color: black;
+  font-weight: bold;
+`
+
 const StyledIconsContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -61,6 +68,10 @@ const Footer = () => (
         alt='Luxette email link'
       />
     </StyledIconsContainer>
+
+    <StyledCopyright>
+      Copyright Luxette, LLC. All Rights Reserved
+    </StyledCopyright>
   </StyledContainer>
 )
 
