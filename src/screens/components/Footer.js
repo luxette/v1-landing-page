@@ -70,7 +70,7 @@ const Footer = () => (
     </StyledIconsContainer>
 
     <StyledCopyright>
-      Copyright Luxette, LLC. All Rights Reserved
+      Copyright Luxette, LLC 2019. All Rights Reserved.
     </StyledCopyright>
   </StyledContainer>
 )
