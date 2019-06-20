@@ -23,6 +23,7 @@ const StyledContainer = styled.div`
     font-weight: bold;
     color: ${secondary1};
     text-decoration: none;
+    border-bottom: 2px solid;
 
     a:hover {
       cursor: pointer;
@@ -35,8 +36,7 @@ const Contact = () => (
   <StyledContainer>
     <p>
       CUSTOM DESTINATIONS ARE AVAILABLE UPON REQUEST.
-      CONTACT US {' <'}<a href='mailto:concierge@luxette.co'>HERE</a>{'> '}
-      TO GET STARTED.
+      CONTACT US <a href='mailto:concierge@luxette.co'>HERE</a>  TO GET STARTED.
     </p>
   </StyledContainer>
 )
